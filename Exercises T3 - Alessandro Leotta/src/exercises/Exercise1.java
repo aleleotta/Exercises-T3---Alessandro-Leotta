@@ -6,8 +6,30 @@ public class Exercise1 {
 		int hours;
 		int minutes;
 		int seconds;
+		int increment;
 		Scanner sc = new Scanner(System.in);
-		System.out.println();
+		System.out.println("Introduce hours: ");
+		hours = sc.nextInt();
+		System.out.println("Introduce minutes: ");
+		minutes = sc.nextInt();
+		System.out.println("Introduce seconds: ");
+		seconds = sc.nextInt();
+		System.out.println("Introduce incrementation in seconds: ");
+		increment = sc.nextInt();
+		while(increment >= 0) {
+			seconds = seconds + increment;
+			while (seconds >= 60) {
+				seconds = seconds - 60;
+				minutes++;
+			}
+			while(minutes >= 60) {
+				minutes = minutes - 60;
+				hours++;
+			}
+			System.out.println("Introduce more seconds or introduce a negative number to see the result: ");
+			increment = sc.nextInt();
+		}
+		System.out.println("Time: " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds.");
 		sc.close();
 	}
 }
