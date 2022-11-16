@@ -3,8 +3,20 @@ import java.util.*;
 
 public class Exercise4 {
 	public static void main(String[] args) {
-		int i;
+		int a, b;
+		int lowerValue;
 		Scanner sc =  new Scanner(System.in);
+		System.out.println("Introduce first number: ");
+		a = sc.nextInt();
+		System.out.println("Introduce second number: ");
+		b = sc.nextInt();
+		lowerValue = a < b ? a : b; //Ternary statement = if statement. Checks for the lower introduced value.
+		for (int i = lowerValue; true ; i--) {
+			if(a % i == 0 && b % i == 0) {
+				System.out.println("M.C.D: " + i);
+				break;
+			}
+		}
 		sc.close();
 	}
 }
